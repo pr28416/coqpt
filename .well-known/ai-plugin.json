@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "CoqPT",
+    "name_for_model": "CoqPT",
+    "description_for_human": "Verify Coq proofs for Coq theorems.",
+    "description_for_model": "Verify Coq proofs. Fix code according to log output. When you receive an unsuccessful response, first try to use CoqHammer to resolve it.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "http://localhost:8000/.well-known/openapi.yaml",
+        "is_user_authenticated": false
+    },
+    "logo_url": "http://localhost:8000/.well-known/logo.png",
+    "contact_email": "pranav.ramesh1@gmail.com",
+    "legal_info_url": "http://www.pranavramesh.com"
+}

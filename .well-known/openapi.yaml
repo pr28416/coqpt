@@ -1,0 +1,46 @@
+openapi: 3.0.1
+info:
+  title: CoqPT
+  description: Verify Coq proofs for Coq theorems that are given by ChatGPT. Provide CoqHammer documentation so it can be used to simplify Coq code.
+  version: 'v1'
+servers:
+  - url: http://localhost:8000
+paths:
+  /verify:
+    post:
+      operationId: verify
+      summary: "Verifies Coq code."
+      parameters:
+        - in: query
+          name: v
+          schema:
+            type: string
+          description: The inputted Coq code that is to be verified.
+      responses:
+        "200":
+          description: OK
+  /learnhammer:
+    get:
+      operationId: learnhammer
+      summary: "Teaches ChatGPT how to use the CoqHammer library from its documentation."
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    getVerifyResponse:
+      type: object
+      properties:
+        verify:
+          type: dictionary
+          items:
+            type: string
+          description: The verification output.
+    getLearnHammerResponse:
+      type: object
+      properties:
+        learnhammer:
+          type: array
+          items:
+            type: string
+          description: The CoqHammer documntation.
